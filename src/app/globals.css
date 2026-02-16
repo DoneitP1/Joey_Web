@@ -1,26 +1,210 @@
+@import url('https://fonts.googleapis.com/css2?family=Fredoka:wght@400;500;600;700&family=Quicksand:wght@400;500;600;700&display=swap');
 @import "tailwindcss";
 
 :root {
-  --background: #ffffff;
-  --foreground: #171717;
+  --safari-green: #8CB369;
+  --safari-green-light: #A8CC8C;
+  --safari-orange: #F4A259;
+  --safari-orange-light: #F7BC85;
+  --safari-beige: #F4E3C1;
+  --safari-blue: #A2D2FF;
+  --safari-blue-light: #C0E2FF;
+  --safari-cream: #FFF8F0;
+  --safari-brown: #6B4F3A;
+  --safari-brown-light: #8B705F;
+  --safari-pink: #FFB6C1;
+  --safari-yellow: #FFE066;
+  --background: #FFF8F0;
+  --foreground: #6B4F3A;
 }
 
-@theme inline {
+@theme {
   --color-background: var(--background);
   --color-foreground: var(--foreground);
-  --font-sans: var(--font-geist-sans);
-  --font-mono: var(--font-geist-mono);
+  --color-safari-green: var(--safari-green);
+  --color-safari-green-light: var(--safari-green-light);
+  --color-safari-orange: var(--safari-orange);
+  --color-safari-orange-light: var(--safari-orange-light);
+  --color-safari-beige: var(--safari-beige);
+  --color-safari-blue: var(--safari-blue);
+  --color-safari-blue-light: var(--safari-blue-light);
+  --color-safari-cream: var(--safari-cream);
+  --color-safari-brown: var(--safari-brown);
+  --color-safari-brown-light: var(--safari-brown-light);
+  --color-safari-pink: var(--safari-pink);
+  --color-safari-yellow: var(--safari-yellow);
+  --font-heading: 'Fredoka', sans-serif;
+  --font-body: 'Quicksand', sans-serif;
 }
 
-@media (prefers-color-scheme: dark) {
-  :root {
-    --background: #0a0a0a;
-    --foreground: #ededed;
-  }
+html {
+  scroll-behavior: smooth;
 }
 
 body {
   background: var(--background);
   color: var(--foreground);
-  font-family: Arial, Helvetica, sans-serif;
+  font-family: var(--font-body);
+  overflow-x: hidden;
+}
+
+h1,
+h2,
+h3,
+h4,
+h5,
+h6 {
+  font-family: var(--font-heading);
+}
+
+/* Custom Scrollbar */
+::-webkit-scrollbar {
+  width: 8px;
+}
+
+::-webkit-scrollbar-track {
+  background: var(--safari-cream);
+}
+
+::-webkit-scrollbar-thumb {
+  background: var(--safari-orange);
+  border-radius: 10px;
+}
+
+::-webkit-scrollbar-thumb:hover {
+  background: var(--safari-green);
+}
+
+/* Blob shape keyframes */
+@keyframes blob {
+
+  0%,
+  100% {
+    border-radius: 60% 40% 30% 70% / 60% 30% 70% 40%;
+  }
+
+  25% {
+    border-radius: 30% 60% 70% 40% / 50% 60% 30% 60%;
+  }
+
+  50% {
+    border-radius: 50% 60% 30% 60% / 30% 50% 70% 60%;
+  }
+
+  75% {
+    border-radius: 60% 40% 60% 30% / 70% 30% 50% 60%;
+  }
+}
+
+@keyframes float {
+
+  0%,
+  100% {
+    transform: translateY(0px);
+  }
+
+  50% {
+    transform: translateY(-20px);
+  }
+}
+
+@keyframes float-slow {
+
+  0%,
+  100% {
+    transform: translateY(0px) rotate(0deg);
+  }
+
+  50% {
+    transform: translateY(-15px) rotate(3deg);
+  }
+}
+
+@keyframes sparkle {
+
+  0%,
+  100% {
+    opacity: 0;
+    transform: scale(0);
+  }
+
+  50% {
+    opacity: 1;
+    transform: scale(1);
+  }
+}
+
+/* Wave Separator SVG Background */
+.wave-separator {
+  position: relative;
+  width: 100%;
+  overflow: hidden;
+  line-height: 0;
+}
+
+.wave-separator svg {
+  display: block;
+  width: 100%;
+  height: auto;
+}
+
+/* Polaroid card */
+.polaroid {
+  background: white;
+  padding: 12px 12px 40px 12px;
+  box-shadow: 0 4px 20px rgba(107, 79, 58, 0.15);
+  transition: transform 0.3s ease, box-shadow 0.3s ease;
+}
+
+.polaroid:hover {
+  transform: scale(1.05) rotate(0deg) !important;
+  box-shadow: 0 8px 30px rgba(107, 79, 58, 0.25);
+  z-index: 10;
+}
+
+/* WhatsApp button */
+.whatsapp-btn {
+  background: linear-gradient(135deg, #25D366 0%, #128C7E 100%);
+  color: white;
+  border: none;
+  padding: 14px 28px;
+  border-radius: 50px;
+  font-family: var(--font-body);
+  font-weight: 600;
+  font-size: 1rem;
+  cursor: pointer;
+  transition: all 0.3s ease;
+  display: inline-flex;
+  align-items: center;
+  gap: 8px;
+  box-shadow: 0 4px 15px rgba(37, 211, 102, 0.3);
+}
+
+.whatsapp-btn:hover {
+  transform: translateY(-2px);
+  box-shadow: 0 6px 20px rgba(37, 211, 102, 0.4);
+}
+
+/* Checkmark list */
+.check-list li {
+  display: flex;
+  align-items: center;
+  gap: 10px;
+  padding: 6px 0;
+  font-family: var(--font-body);
+}
+
+.check-list li::before {
+  content: '✓';
+  display: flex;
+  align-items: center;
+  justify-content: center;
+  width: 24px;
+  height: 24px;
+  border-radius: 50%;
+  background: var(--safari-green);
+  color: white;
+  font-size: 14px;
+  font-weight: 700;
+  flex-shrink: 0;
 }
