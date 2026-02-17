@@ -60,6 +60,22 @@ const services: Service[] = [
         color: "#6B4F3A",
         bgColor: "#F4E3C1",
     },
+    {
+        title: "Catering & Lezzet Köşesi",
+        description:
+            "Waffle, Osmanlı macunu, pizza, hamburger, pankek ve krep çeşitlerimizle partinize lezzet katıyoruz.",
+        icon: "🍕",
+        color: "#FF6B6B",
+        bgColor: "#FFE5E5",
+    },
+    {
+        title: "Yaratıcı Workshoplar",
+        description:
+            "Ebru, çanta, kum ve figür boyama, resim atölyesi ve filament kalem etkinlikleriyle çocuklar sanatla buluşuyor.",
+        icon: "🎨",
+        color: "#9D4EDD",
+        bgColor: "#F3E5F5",
+    },
 ];
 
 const containerVariants = {
