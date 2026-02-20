@@ -142,12 +142,12 @@ export default function Footer() {
                                     +90 544 146 91 58
                                 </a>
                                 <a
-                                    href="mailto:info@joeyorganizasyon.com"
+                                    href="mailto:info@joeyorganizasyon.net"
                                     className="flex items-center gap-3 text-safari-beige/80 hover:text-safari-orange transition-colors text-sm"
                                     style={{ fontFamily: "var(--font-body)" }}
                                 >
                                     <span className="text-xl">📧</span>
-                                    info@joeyorganizasyon.com
+                                    info@joeyorganizasyon.net
                                 </a>
                                 <div
                                     className="flex items-center gap-3 text-safari-beige/80 text-sm"
